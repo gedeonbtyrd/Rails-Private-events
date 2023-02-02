@@ -1,0 +1,28 @@
+<h1 class="title">Upcoming Events</h1>
+       <div class="card__container">
+
+        <% @events.future_events.each do | event |%>
+          <div class="event__card" <%= ' Current User' if event.creator == current_user %> >
+                <p class="event__title"><%=event.creator.username%> - <%= event.name %>  </p>
+
+                    <% if event.private == true %>
+                        <p><strong>Attendance:</strong>&nbsp; invite only</p>
+                    <% else %>
+                        <p><strong>Attendance:</strong>&nbsp; anyone</p>
+                    <% end %>
+
+                    <p><strong>Location:</strong><%= event.location %></p>
+                    <p><strong>Date:</strong>
+
+                      <%= event.date.strftime("%B")[0,3] %>
+                      <%= event.date.strftime("%d") %>,
+                      <%= event.date.year %></p>
+                    <p><%= link_to 'Read more', event, class: 'button' %> &nbsp; &nbsp;</p>
+            </div>
+
+
+                <% end %>
+    </div>
+
+
+

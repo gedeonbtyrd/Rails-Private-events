@@ -1,0 +1,343 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *https://github.com/
+ *Style SACCSy
+ *= require_tree .
+ *= require_self
+ */
+
+
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+$background-color: #044604;
+$second-color:#095f23;
+$third-color:#1c6130;
+$text-color:#ffffff;
+$bg-success: #00b42a;
+$color-success: #146527;
+$fourth-color: #06443c8e;
+$text: #f2f4f5;
+$background: #035336;
+
+@mixin first__button {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid $fourth-color;
+    border-radius: 5px;
+    color: $fourth-color;
+  }
+  
+  @mixin first__button__hover {
+    background-color: $fourth-color;
+    color:$text;
+    transition: all 0.3s ease-in-out;
+  
+  }
+  
+  
+  @mixin second__button {
+    font-size: 1rem;
+    margin: 0rem 0rem 1rem 2rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid $fourth-color;
+    border-radius: 5px;
+    background-color: $fourth-color;
+    color:$text;
+  
+  }
+  
+  
+  @mixin second__button__hover {
+    background-color: $background;
+    color:$fourth-color;
+    transition: all 0.3s ease-in-out;
+  
+  }
+  @mixin input {
+    width: 20rem;
+    height: 2rem;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    background-color: $background;
+    color: $text;
+  
+  }
+  
+
+body::-webkit-scrollbar{
+    display: none;
+  }
+
+.notice{
+    font-size: 2rem;
+    padding: 1rem;
+    color: $color-success;
+    margin-bottom: 1rem;
+    position: absolute;
+    text-align: center;
+    top: 6.5rem;
+    left: 0;
+    right: 0;
+    animation: fade 20s;
+    opacity: 0;
+    @keyframes fade {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+
+
+  .alert{
+    color: rgb(17, 0, 255);
+    padding: 5rem;
+    margin-bottom: 1rem;
+    position: absolute;
+    text-align: center;
+    top: 6.5rem;
+    left: 0;
+    right: 0;
+    animation: fade 20s;
+    opacity: 0;
+    @keyframes fade {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+
+
+.nav-container{
+    background: rgba( 17, 17, 17, 0.75 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 3px );
+    border-radius: 5px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 50rem 5rem 5rem 5rem;
+    position: relative; //fix
+    transition: all 0.5s ease;
+    z-index: 1000;
+    &.active{
+        background-color: $second-color;
+    }
+    .nav-brand{
+        flex-direction: row;
+        font-size: 1.5rem;
+        color: whitesmoke;
+        font-weight: 600;
+        letter-spacing: 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        h2{
+          margin-left: 2rem;
+          a{
+            color: #f8f8f8d2;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+          }
+        }
+        li{
+          text-decoration: none;
+        }
+        
+    }
+    
+    .home_event{
+        border: 1px solid red;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        color: $text-color;
+        background-color: transparent;
+        text-decoration:none;
+    
+        margin-right: 1rem;
+        
+          &:hover{
+            
+            border: 1px solid #10e0ac;
+
+        }
+        }
+        .new_event{
+        border: 1px solid red;
+          font-size: 1rem;
+          margin-bottom: 1rem;
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+          color: $text-color;
+          background-color:transparent;
+          text-decoration:none;
+
+      
+
+          
+            &:hover{
+             
+              border: 1px solid #10e0ac
+          }
+          }
+    .navbar-image{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+
+    .nav-dropdown{
+        .button-container{
+            .dropdown{
+                a{
+                    background-color: #000000;
+                    border: 1px solid #10e0ac;
+                    cursor: pointer;
+                    transition: all 0.5s ease;
+                    &:hover{
+                        background-color: #10e0ac;
+                        color: black;
+                    }
+                }
+
+                .dropdown-menu{
+                    background-color: transparent;
+                    width: 100%;
+                    // TRANSITION WHEN IT CLICK
+                    border-radius: 10px;
+               
+                    li{    
+                         color: $text;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+
+                        .link{
+                            color: $text;
+                            font-size: 1rem;
+                            border: none;
+                            padding: 1rem;
+                            background-color: transparent;
+                            border-radius:0;
+                            cursor: pointer;
+                            transition: all 0.5s ease;
+                            text-decoration: none;
+
+                            &:hover{
+                                
+                                color: lightseagreen;
+                                font-size: 1rem;
+                                font-weight: 600;
+                                border: none;
+                                padding: 1rem 2rem;
+                                border-radius: 0;
+                                text-decoration: none;
+                                background-color: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            .btn-wrapper{
+                margin-top: .4rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .home_event{
+                  font-size: 1rem;
+                  margin-bottom: 1rem;
+                  padding: 0.5rem 1rem;
+                  border-radius: 5px;
+                  color: $text-color;
+                  background-color: transparent;
+                  text-decoration:none;
+                  text-transform: capitalize;
+                  margin-right: 1rem;
+                  
+                    &:hover{
+                      border: 1px solid #10e0ac;
+                  }
+                  }
+                  .new_event{
+                    font-size: 1rem;
+                    margin-bottom: 1rem;
+                    padding: 0.5rem 1rem;
+                    border-radius: 5px;
+                    color: $text-color;
+                    background-color:transparent;
+                    text-decoration:none;
+         
+                    margin-right: 1rem;
+        
+                    
+                      &:hover{
+                       
+                        border: 1px solid #10e0ac;
+                    }
+                    }
+          
+        
+                .sign__in{
+                  @include first__button();
+                  background-color: #000102;
+                  color: $text-color;
+                  text-decoration:none;
+                  margin-left: 1rem ;
+        
+                    &:hover{
+                      @include first__button__hover();
+                  }
+                  }
+        
+                .sign__up{
+                      @include second__button();
+                      text-decoration:none;
+                      background-color: $background;
+                      
+                      &:hover{
+                          
+                        @include first__button__hover();
+                      }
+                  }
+            }
+        }
+    }
+}
+
+

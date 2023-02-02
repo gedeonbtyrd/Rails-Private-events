@@ -1,0 +1,65 @@
+<nav class="nav-container">
+    <div class="nav-brand">
+    
+        <%= link_to root_path do %>
+        <% end %>
+        <h1 class="title1"> PRIVATE
+        <span>
+            <%= link_to "EVENTS", root_path, style: "color: #FC7300; text-decoration: none; background-color:black; border-radius:25px; padding:5px 15px;"%>        </span , root_path></h1>
+     
+        
+            
+    
+    </div>
+
+                <div class="btn-wrapper">
+                    <%= link_to "MAIN", events_path, class:"home_event" %></li>
+                </div>
+
+                <div class="btn-wrapper">
+                    <%= link_to "MY EVENTS", my_events_url, class:"new_event" %></li>
+                </div>
+
+                <div class="btn-wrapper">
+                    <%= link_to "ADD EVENTS", new_event_url , class:"home_event" %></li>
+                </div>
+                
+                <div class="btn-wrapper">
+                    <%= link_to "MANAGE ACCOUNT", edit_user_registration_path, class:"new_event" %></li>
+                </div>
+
+    <div class="nav-dropdown">
+    
+        <div class="button-container"data-bs-theme="dark">
+            <%if current_user %>
+                <div class="dropdown">
+                <a class="btn btn-danger dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <%= current_user.email.split('@')[0].capitalize %>
+                </a>
+                    <ul class="dropdown-menu " aria-labelledby="dropdownMenuButtonDark">
+                        <li class="d-flex justify-content-center first"><%= button_to "Log out", destroy_user_session_path, method: :delete,  class:"link" %></li>
+                    </ul>
+                </div>
+
+                
+        </div>
+        
+            <%else%>
+                <div class="btn-wrapper">
+                  
+                <%= link_to "HOME", root_path,class:"home_event" %>
+                 <%= link_to "NEW ", new_event_path,class:"new_event" %>
+                <%= link_to "Sign Up", new_user_registration_path, class:"sign__up"%>
+                <%= link_to "Sign In", new_user_session_path, class:"sign__in"%>
+
+                </div>
+                
+            <%end%>
+    </div>
+    
+                
+    
+    
+    
+</nav>
+
