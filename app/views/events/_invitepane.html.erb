@@ -1,5 +1,5 @@
 <div class="sendInvites__container">
-  <p class="title">User List</p>
+  <p class="title"></p>
           <% User.all.order('email Asc').each do | user |%>
             <% unless user.id == current_user.id %>
               <div class="box invites">
