@@ -14,10 +14,10 @@
                     <p><strong>Location:</strong><%= event.location %></p>
                     <p><strong>Date:</strong>
 
-                      <%= event.date.strftime("%B")[0,3] %>
-                      <%= event.date.strftime("%d") %>,
-                      <%= event.date.year %></p>
-                    <p><%= link_to 'Read more', event, class: 'button' %> &nbsp; &nbsp;</p>
+                      <%= event.date.in_time_zone("Asia/Manila").strftime("%B")[0,3] %>
+                      <%= event.date.in_time_zone("Asia/Manila").strftime("%d") %>,
+                      <%= event.date.in_time_zone("Asia/Manila").year %></p>
+                    <p><%= link_to 'Expand', event, class: 'button' %> &nbsp; &nbsp;</p>
             </div>
 
 

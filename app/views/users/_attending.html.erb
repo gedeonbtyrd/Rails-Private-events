@@ -1,5 +1,5 @@
 <div class="my__events">
-  <h3 class= "title">Future Events</h3>
+  <h3 class= "title">Future</h3>
       <div class="card__container">
           <% @attending_events.each do | event |%>
             <div class="event__card" >
@@ -7,9 +7,9 @@
               <p class="event__host" ><strong>Host:</strong><%= event.creator.username %></strong><br/></p>
               <p class="event__location" ><strong>Location:</strong> <%= event.location %></p>
               <p class="event__date"><strong>Date:</strong>
-              <%= event.date.strftime("%B")[0,3] %>
-              <%= event.date.strftime("%d") %>,
-              <%= event.date.year %></p>
+              <%= event.date.in_time_zone("Asia/Manila").strftime("%B")[0,3] %>
+              <%= event.date.in_time_zone("Asia/Manila").strftime("%d") %>,
+              <%= event.date.in_time_zone("Asia/Manila").year %></p>
                 <div class="button__container">
                   <p><%= link_to 'View', event, class: 'button' %></p>
                    <P><%= link_to 'Cancel attend', destroy_attending_path(:attendee_id=>current_user.id, :attended_event_id=>event.id),

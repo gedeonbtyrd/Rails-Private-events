@@ -584,6 +584,12 @@ body::-webkit-scrollbar{
             }
         }
         p{
+            a{
+                text-decoration: none;
+                color: #0ac266;
+
+            }
+            
             color: $text-color;
             margin-top: 1rem;
             text-decoration: none;
@@ -1084,11 +1090,11 @@ body::-webkit-scrollbar{
             .event__title{
                 color: #ffffff;
                 text-align: center;
-                font-size: 3rem;
+                font-size: 2rem;
                 font-weight: 600;
                 margin-bottom: 3rem;
                 text-transform: uppercase;
-                margin-top: -10rem;
+                margin-top: -8rem;
                 
 
             }
@@ -1142,8 +1148,9 @@ body::-webkit-scrollbar{
                 display: flex;
                 justify-content: center;
 
-                .btn{  
-                  
+                .btn{
+                    left: 35rem;
+                    position: relative;
                     width: fit-content;
                     height: fit-content;
                     border: 1px solid greenyellow;
@@ -1163,7 +1170,11 @@ body::-webkit-scrollbar{
             }
 
             .button{ 
-                
+
+                    left: 35rem;
+                    top: 5rem;
+                    width: 8rem;
+                    position: relative;
                     align-items: center;
                     border:1px solid #146527;
                     color: $text;
@@ -1322,7 +1333,6 @@ body::-webkit-scrollbar{
         .event__card{
          
 
-            position: relative;
             background-color: #fffdfd34;
             width: fit-content;
             height: fit-content;
@@ -1355,6 +1365,8 @@ body::-webkit-scrollbar{
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
+                
+                
                
 
                 .btn{
@@ -1371,6 +1383,8 @@ body::-webkit-scrollbar{
                         color: $text;
                         cursor: pointer;
                         transition: all 0.5s ease;
+                        
+                        
                        
                         &:hover{
                             width: 11rem;

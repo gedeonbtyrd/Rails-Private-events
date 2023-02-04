@@ -3,8 +3,8 @@
         <% @events.past_events.each do | event |%>
                 <div class="event__card">
                     <p><%= link_to event.name, event, class:"event__title"%></p>
-                    <p><%= event.date.strftime("%B")[0,3] %> &nbsp;</p>
-                    <p><%= event.date.year %> &nbsp; &nbsp;</p>
+                    <p><%= event.date.in_time_zone("Asia/Manila").strftime("%B")[0,3] %> &nbsp;</p>
+                    <p><%= event.date.in_time_zone("Asia/Manila").year %> &nbsp; &nbsp;</p>
                     <p><%= link_to 'Expand', event, class: 'button' %> &nbsp; &nbsp;</p>
                 </div>
         <% end %>
